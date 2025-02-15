@@ -262,6 +262,9 @@
     - Chicken
     understands:
     - Chicken
+  - type: ExamineableHunger
+  - type: ReplacementAccent
+    accent: chicken
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-organic
   - type: NpcFactionMember
@@ -917,6 +920,9 @@
     - Duck
     understands:
     - Duck
+  - type: ExamineableHunger
+  - type: ReplacementAccent
+    accent: duck
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-organic
   - type: NpcFactionMember
@@ -1089,6 +1095,7 @@
     reagentId: Milk
     quantityPerUpdate: 25
     growthDelay: 30
+  - type: ExamineableHunger
   - type: Butcherable
     spawned:
     - id: FoodMeat
@@ -1263,6 +1270,7 @@
     reagentId: MilkGoat
     quantityPerUpdate: 25
     growthDelay: 20
+  - type: ExamineableHunger
   - type: Wooly
   - type: Food
     solution: wool
