@@ -3,6 +3,7 @@ using System.Linq;
 using System.Numerics;
 using Content.Client.Hands.Systems;
 using Content.Client.Items.Systems;
+using Content.Client.MassMedia;
 using Content.Client.Storage;
 using Content.Client.Storage.Systems;
 using Content.Shared.IdentityManagement;
@@ -617,7 +618,7 @@ public sealed class StorageWindow : BaseWindow
                         {
                             marked.Add(cell);
                             cell.ModulateSelfOverride = spotFree
-                                ? Color.FromHsv((0.18f, 1 / spot, 0.5f / spot + 0.5f, 1f))
+                                ? Color.FromHsv(new System.Numerics.Vector4(0.18f, 1 / spot, 0.5f / spot + 0.5f, 1f))
                                 : Color.FromHex("#2222CC");
                         }
                     }
