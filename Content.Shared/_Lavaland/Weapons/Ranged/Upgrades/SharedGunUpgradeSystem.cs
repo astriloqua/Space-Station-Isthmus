@@ -193,7 +193,8 @@ public abstract partial class SharedGunUpgradeSystem : EntitySystem
 
     public HashSet<Entity<GunUpgradeComponent>> GetCurrentUpgrades(Entity<UpgradeableGunComponent> ent, ItemSlotsComponent? itemSlots = null)
     {
-        if (!Resolve(ent, ref itemSlots))
+        // Isthmus(astriloqua): Missing component here is normal as it is queried before it is given a slot; ergo has no upgrades.
+        if (!Resolve(ent, ref itemSlots, false))
             return new HashSet<Entity<GunUpgradeComponent>>();
 
         var upgrades = new HashSet<Entity<GunUpgradeComponent>>();
