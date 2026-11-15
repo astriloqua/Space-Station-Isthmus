@@ -45,6 +45,8 @@ let
     alsa-lib
     dbus
     at-spi2-core
+    fontconfig
+    openal
   ];
 in
 pkgs.mkShell {
