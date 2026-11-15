@@ -15,6 +15,7 @@
     <!-- pin transitive deps -->
     <PackageReference Include="System.Management" />
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp" />
+    <PackageReference Include="Moq" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Content.Client\Content.Client.csproj" />

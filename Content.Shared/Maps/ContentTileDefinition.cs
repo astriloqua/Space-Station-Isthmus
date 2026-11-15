@@ -27,7 +27,7 @@ namespace Content.Shared.Maps
         [AbstractDataFieldAttribute]
         public bool Abstract { get; private set; }
 
-        [IdDataField] public string ID { get; } = string.Empty;
+        [IdDataField] public string ID { get; private set; } = string.Empty;
 
         public ushort TileId { get; private set; }
 
@@ -50,7 +50,7 @@ namespace Content.Shared.Maps
         // Delta V
         [DataField("canShovel")] public bool CanShovel { get; private set; }
         //Delta V
-        
+
         /// <summary>
         /// Effective mass of this tile for grid impacts.
         /// </summary>

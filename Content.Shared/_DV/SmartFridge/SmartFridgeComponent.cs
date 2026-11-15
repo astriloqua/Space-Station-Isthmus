@@ -48,7 +48,7 @@ public sealed partial class SmartFridgeComponent : Component
     [DataField]
     public SoundSpecifier SoundDeny = new SoundPathSpecifier("/Audio/Machines/custom_deny.ogg");
 
-    // Frontier: 
+    // Frontier:
     /// <summary>
     /// The maximum number of entities that can be stored in the fridge
     /// </summary>
@@ -58,7 +58,7 @@ public sealed partial class SmartFridgeComponent : Component
 }
 
 [Serializable, NetSerializable, DataRecord]
-public record struct SmartFridgeEntry
+public partial record struct SmartFridgeEntry
 {
     public string Name;
 
