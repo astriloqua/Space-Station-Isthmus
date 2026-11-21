@@ -138,17 +138,16 @@ public sealed partial class LoadoutPreferenceSelector : Control
         entityManager.EnsureComponent<AppearanceComponent>(dummyLoadoutItem);
         entityManager.EnsureComponent<PaintedComponent>(dummyLoadoutItem, out var paint);
 
-        var loadoutName =
-            Loc.GetString($"loadout-name-{loadout.ID}") == $"loadout-name-{loadout.ID}"
-                ? entityManager.GetComponent<MetaDataComponent>(dummyLoadoutItem).EntityName
-                : Loc.GetString($"loadout-name-{loadout.ID}");
+        var loadoutName = Loc.TryGetString($"loadout-name-{loadout.ID}", out var customName)
+            ? customName
+            : entityManager.GetComponent<MetaDataComponent>(dummyLoadoutItem).EntityName;
 
-        // Display the item's label if it's present
+        // Display the item's label if it's present.
         if (entityManager.TryGetComponent(dummyLoadoutItem, out LabelComponent? labelComponent))
         {
             var itemLabel = labelComponent.CurrentLabel;
             if (!string.IsNullOrEmpty(itemLabel))
-                loadoutName += $" ({Loc.GetString(itemLabel)})";
+                loadoutName += $" ({itemLabel})"; // Should be localised on mapinit
         }
 
         var loadoutDesc =
@@ -241,17 +240,16 @@ public sealed partial class LoadoutPreferenceSelector : Control
             UpdatePaint(new(dummyLoadoutItem, paint), entityManager);
         };
 
-        var desc = Loc.GetString(loadoutDesc);
         NameEdit.PlaceHolder = loadoutName;
-        DescriptionEdit.Placeholder = new Rope.Leaf(desc);
+        DescriptionEdit.Placeholder = new Rope.Leaf(loadoutDesc);
 
 
         var tooltip = new Tooltip();
         PreferenceButton.TooltipSupplier = _ => tooltip;
         var toolBox = (BoxContainer) tooltip.Children.First();
 
-        if (!string.IsNullOrEmpty(desc))
-            tooltip.SetMessage(FormattedMessage.FromMarkupPermissive(desc));
+        if (!string.IsNullOrEmpty(loadoutDesc))
+            tooltip.SetMessage(FormattedMessage.FromMarkupPermissive(loadoutDesc));
         if (loadout.Requirements.Any())
         {
             toolBox.AddChild(

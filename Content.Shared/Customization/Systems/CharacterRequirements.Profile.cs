@@ -371,9 +371,21 @@ public sealed partial class CharacterLoadoutRequirement : CharacterRequirement
             "character-loadout-requirement",
             ("inverted", Inverted),
             ("loadouts", $"[color={color}]{string.Join($"[/color], [color={color}]",
-                Loadouts.Select(l => Loc.GetString($"loadout-name-{l}")))}[/color]"));
+                Loadouts.Select(l => LoadoutName(l, prototypeManager)))}[/color]"));
 
         return Loadouts.Any(l => profile.LoadoutPreferences.Select(l => l.LoadoutName).Contains(l.ToString()));
+    }
+
+    private static string LoadoutName(ProtoId<LoadoutPrototype> id, IPrototypeManager prototypeManager)
+    {
+        if (Loc.TryGetString($"loadout-name-{id}", out var name))
+            return name;
+
+        return prototypeManager.TryIndex(id, out var loadout)
+            && loadout.Items.Count > 0
+            && prototypeManager.TryIndex(loadout.Items[0], out var item)
+                ? item.Name
+                : id.Id;
     }
 }
 

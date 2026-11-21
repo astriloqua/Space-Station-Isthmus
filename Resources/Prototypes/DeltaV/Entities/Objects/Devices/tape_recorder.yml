@@ -103,7 +103,7 @@
   id: CassetteTapeInterview
   components:
   - type: Label
-    currentLabel: Interview with Garry Smosh
+    currentLabel: tape-label-interview-with-garry-smosh
   - type: TapeCassette
     recordedData:
       - timestamp: 2

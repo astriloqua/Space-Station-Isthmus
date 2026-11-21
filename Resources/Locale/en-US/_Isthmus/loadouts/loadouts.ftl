@@ -1,0 +1,10 @@
+character-item-group-LoadoutAdminAssistantGloves = Admin Assistant Gloves
+character-item-group-LoadoutAdminAssistantUniforms = Admin Assistant Uniforms
+character-item-group-LoadoutBlueshieldOfficerHats = Blueshield Officer Hats
+character-item-group-LoadoutChiefEngineerBackpack = Chief Engineer Backpack
+character-item-group-LoadoutCommandSelfDefense = Command Self-Defense
+character-item-group-LoadoutEyesEngineering = Engineering Eyewear
+character-item-group-LoadoutHeadOfSecurityWeapon = Head of Security Weapon
+character-item-group-LoadoutMedkits = Medkits
+character-item-group-LoadoutSeniorEngineerEquipmentExtra = Senior Engineer Equipment Extra
+character-item-group-LoadoutSeniorPhysicianToolsExtra = Senior Physician Tools Extra

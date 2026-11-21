@@ -978,7 +978,7 @@
           Quantity: 100
   - type: Drink
   - type: Label
-    currentLabel: red bool
+    currentLabel: drink-label-red-bool
 
 - type: entity
   parent: DrinkBottlePlasticBaseFull

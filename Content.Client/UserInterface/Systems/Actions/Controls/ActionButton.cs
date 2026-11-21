@@ -192,8 +192,8 @@ public sealed class ActionButton : Control, IEntityControl
         if (!_entities.TryGetComponent(ActionId, out MetaDataComponent? metadata))
             return null;
 
-        var name = FormattedMessage.FromMarkupPermissive(Loc.GetString(metadata.EntityName));
-        var decr = FormattedMessage.FromMarkupPermissive(Loc.GetString(metadata.EntityDescription));
+        var name = FormattedMessage.FromMarkupPermissive(metadata.EntityName);
+        var decr = FormattedMessage.FromMarkupPermissive(metadata.EntityDescription);
 
         if (_action is { Charges: not null })
         {

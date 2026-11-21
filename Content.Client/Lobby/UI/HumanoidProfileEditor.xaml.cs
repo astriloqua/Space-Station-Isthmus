@@ -1633,7 +1633,7 @@ namespace Content.Client.Lobby.UI
 
             var borgNames = _prototypeManager.Index<DatasetPrototype>(CyborgNames);
             var randomName = _random.Pick(borgNames.Values);
-            CyborgNameEdit.PlaceHolder = Loc.GetString(randomName);
+            CyborgNameEdit.PlaceHolder = randomName;
         }
 
         private void UpdateSpawnPriorityControls()
@@ -2419,9 +2419,7 @@ namespace Content.Client.Lobby.UI
 
             // Fill categories with loadouts
             foreach (var (loadout, usable) in _loadouts
-                .OrderBy(l => l.Key.ID)
-                .ThenBy(l => Loc.GetString($"loadout-name-{l.Key.ID}"))
-                .ThenBy(l => l.Key.Cost))
+                .OrderBy(l => l.Key.ID))
             {
                 if (_loadoutPreferences.Select(lps => lps.Loadout.ID).Contains(loadout.ID))
                 {

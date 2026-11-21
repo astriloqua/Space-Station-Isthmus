@@ -36,7 +36,7 @@
   suffix: Cryptobiolin, 5
   components:
   - type: Label
-    currentLabel: Cryptobiolin 20u
+    currentLabel: pill-label-cryptobiolin-20u
   - type: StorageFill
     contents:
     - id: PillCryptobiolin
@@ -64,7 +64,7 @@
   suffix: ChloralHydrate, 5
   components:
   - type: Label
-    currentLabel: chloral-hydrate 20u
+    currentLabel: pill-label-chloral-hydrate-20u
   - type: StorageFill
     contents:
     - id: PillChloralHydrate
