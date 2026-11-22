@@ -263,8 +263,6 @@
     understands:
     - Chicken
   - type: ExamineableHunger
-  - type: ReplacementAccent
-    accent: chicken
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-organic
   - type: NpcFactionMember
@@ -921,8 +919,6 @@
     understands:
     - Duck
   - type: ExamineableHunger
-  - type: ReplacementAccent
-    accent: duck
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-organic
   - type: NpcFactionMember
